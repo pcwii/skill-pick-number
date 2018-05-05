@@ -1,11 +1,11 @@
-# Copyright 2017 Willem Ligtenberg
+# Copyright 2018 Phil Chenier
 #
-# Coin flip skill is free software: you can redistribute it and/or modify
+# This pick number skill is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# Coin flip skill is distributed in the hope that it will be useful,
+# The Pick Number skill is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
@@ -14,7 +14,6 @@
 # along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
 
 from os.path import dirname, join
-
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.util.log import getLogger
