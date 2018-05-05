@@ -10,7 +10,7 @@ Mycroft.AI will select a random number between a min and max value.
 ## Credits
 PCWii
 ## Require 
-platform_picroft 
+platform_picroft
 ## Other Requirements
 - [Mycroft](https://docs.mycroft.ai/installing.and.running/installation)
 ## Further Reading
