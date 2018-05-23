@@ -65,8 +65,7 @@ class PickNumberSkill(MycroftSkill):
             highNumber = intFirst
         myNumber = random.randint(lowNumber,highNumber)
         self.speak_dialog("pick.number", data={"number": str(myNumber)})
-        #self.speak("The number I have selected is " + str(myNumber))
-
+       
     # The "stop" method defines what Mycroft does when told to stop during
     # the skill's execution. In this case, since the skill's functionality
     # is extremely simple, the method just contains the keyword "pass", which
