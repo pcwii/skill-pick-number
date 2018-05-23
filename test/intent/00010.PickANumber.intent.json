@@ -1,4 +1,4 @@
 {
   "utterance": "pick a number between 1 and 10",
-  "expected_response": \b(The number i have picked is*|I have chosen*|I choose*|I pick*|I will pick*|I have picked*)\b
+  "expected_dialog": "pick.number"
 }
