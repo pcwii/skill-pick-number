@@ -17,4 +17,4 @@ platform_picroft
 - 
 ## Current state
 Working features:
- - Picking a number
+ - All examples are working
