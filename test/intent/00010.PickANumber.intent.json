@@ -1,4 +1,0 @@
-{
-  "utterance": "pick a number between 1 and 10",
-  "expected_dialog": "pick.number"
-}

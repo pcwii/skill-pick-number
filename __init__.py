@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
 
-from os.path import dirname, join
+from os.path import dirname
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.util.log import getLogger
@@ -26,12 +26,13 @@ __author__ = 'PCWii'
 # statements will show up in the command line when running Mycroft.
 LOGGER = getLogger(__name__)
 
+
 # The logic of each skill is contained within its own class, which inherits
 # base methods from the MycroftSkill class with the syntax you can see below:
 # "class ____Skill(MycroftSkill)"
 class PickNumberSkill(MycroftSkill):
 
-    # The constructor of the skill, which calls MycroftSkill's constructor
+    # The constructor of the skill, which calls Mycroft Skill's constructor
     def __init__(self):
         super(PickNumberSkill, self).__init__(name="PickNumberSkill")
 
@@ -53,18 +54,18 @@ class PickNumberSkill(MycroftSkill):
     # of a file in the dialog folder, and Mycroft speaks its contents when
     # the method is called.
     def handle_pick_number_intent(self, message):
-        strRemainder = str(message.utterance_remainder())
-        strLimits = re.findall('\d+',strRemainder)
-        intFirst = int(strLimits[0])
-        intSecond = int(strLimits[1])
-        if intFirst < intSecond:
-            lowNumber = intFirst
-            highNumber = intSecond
+        str_remainder = str(message.utterance_remainder())
+        str_limits = re.findall('\d+', str_remainder)
+        int_first = int(str_limits[0])
+        int_second = int(str_limits[1])
+        if int_first < int_second:
+            low_number = int_first
+            high_number = int_second
         else:
-            lowNumber = intSecond
-            highNumber = intFirst
-        myNumber = random.randint(lowNumber,highNumber)
-        self.speak_dialog("pick.number", data={"number": str(myNumber)})
+            low_number = int_second
+            high_number = int_first
+        my_number = random.randint(low_number, high_number)
+        self.speak_dialog("pick.number", data={"number": str(my_number)})
        
     # The "stop" method defines what Mycroft does when told to stop during
     # the skill's execution. In this case, since the skill's functionality
@@ -72,6 +73,7 @@ class PickNumberSkill(MycroftSkill):
     # does nothing.
     def stop(self):
         pass
+
 
 # The "create_skill()" method is used to create an instance of the skill.
 # Note that it's outside the class itself.
