@@ -15,6 +15,7 @@ from os.path import dirname
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.util.log import getLogger
+from mycroft.util.log import LOG
 import re
 import random
 
@@ -54,6 +55,7 @@ class PickNumberSkill(MycroftSkill):
     def handle_pick_number_intent(self, message):
         str_remainder = str(message.utterance_remainder())
         str_limits = re.findall('\d+', str_remainder)
+        LOG.info('returned: ' + str(str_limits))
         int_first = int(str_limits[0])
         int_second = int(str_limits[1])
         if int_first < int_second:
