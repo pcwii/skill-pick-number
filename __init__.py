@@ -56,16 +56,19 @@ class PickNumberSkill(MycroftSkill):
         str_remainder = str(message.utterance_remainder())
         str_limits = re.findall('\d+', str_remainder)
         LOG.info('returned: ' + str(str_limits))
-        int_first = int(str_limits[0])
-        int_second = int(str_limits[1])
-        if int_first < int_second:
-            low_number = int_first
-            high_number = int_second
+        if len(str_limits) == 2:
+            int_first = int(str(str_limits[0]))
+            int_second = int(str(str_limits[1]))
+            if int_first < int_second:
+                low_number = int_first
+                high_number = int_second
+            else:
+                low_number = int_second
+                high_number = int_first
+            my_number = random.randint(low_number, high_number)
+            self.speak_dialog("pick.number", data={"number": str(my_number)})
         else:
-            low_number = int_second
-            high_number = int_first
-        my_number = random.randint(low_number, high_number)
-        self.speak_dialog("pick.number", data={"number": str(my_number)})
+            self.speak_dialog("error")
        
     # The "stop" method defines what Mycroft does when told to stop during
     # the skill's execution. In this case, since the skill's functionality
