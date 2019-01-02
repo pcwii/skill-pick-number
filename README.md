@@ -19,7 +19,6 @@ The minimum and maximum value may be in any order and any value.
 
 ## Category
 **Entertainment**
-WARNING: You have no Categories selected. Please ensure your Skill is assigned to at least one Category.
 
 ## Tags
 #random
